@@ -1,0 +1,19 @@
+<h1>Lise des formations</h1>
+    <table border = "1">
+        <thead>
+            <th>titre</th>
+            <th>nombre participants </th>
+            <th>supprimer </th>
+        </thead>
+{% for formation in formations %}
+        <tbody>
+            <td>{{ formation.nom }}</td>
+            <td>{{ formation.nbrParticipants }}</td>
+            
+            <td>
+                <a href="{{ path('details', {'id': formation.id}) }}">details</a>
+                <a href="{{ path('delete_formation', {'id': formation.id}) }}">supprimer</a>
+            </td>
+        </tbody>
+{% endfor %}
+    </table>
